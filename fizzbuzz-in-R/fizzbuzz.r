@@ -21,6 +21,7 @@ for (i in fbnums) {
   }
 }
 
+print(output)
 
 ## Method 2: efficient for loop -----------
 
@@ -35,6 +36,7 @@ for (i in fbnums) {
   if (output[i] == "") {output[i] <- i}
 }
 
+print(output)
 
 ## Method 3: fizzbuzzR function -------------
 
@@ -53,8 +55,11 @@ output <- case_when(fbnums %% 15 == 0 ~ "FizzBuzz",
           fbnums %% 5 == 0 ~ "Buzz",
           TRUE ~ as.character(fbnums))
 
+print(output)
 
 ## Method 5: map ---------------------------
+
+fbnums <- 1:50
 
 fbmap <- function(input, mod1, mod2, exp1, exp2) {
   output <- ""
@@ -67,3 +72,5 @@ fbmap <- function(input, mod1, mod2, exp1, exp2) {
 }
 
 output <- map_chr(fbnums, ~ fbmap(.x, 3, 5, "Fizz", "Buzz"))
+
+print(output)
